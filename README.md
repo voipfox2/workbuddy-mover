@@ -194,3 +194,25 @@ Windows 的用户级环境变量和 `defaultWorkspacePath` 都存放在**账户�
 
 本项目采用 [MIT 许可证](LICENSE)，版权归 © 2026 voipfox2 所有。
 可自由使用、修改与再分发，仅需保留版权与许可声明。
+
+## 十、CI 自动发布
+
+仓库内置 [`.github/workflows/release.yml`](.github/workflows/release.yml)：推送 `v*` 标签时，
+GitHub Actions 会自动把仓库（排除 `.git` 与 `.workbuddy`）打包成 zip，并创建 / 更新同名 Release
+（含自动生成的发布说明）。无需再手动上传资产。
+
+后续发版只需两步：
+
+```bash
+git tag -a v1.0.1 -m "WorkBuddy 搬家器 v1.0.1"
+git push origin v1.0.1
+```
+
+> 注意：`permissions: contents: write` 已为该工作流授予发布权限；本地推 tag 用的仍是你自己的账号，
+> 与 CI 无关。
+
+## 十一、其他项目上传提示词
+
+[`GITHUB_UPLOAD_PROMPT.md`](GITHUB_UPLOAD_PROMPT.md) 沉淀了本项目上传 GitHub 的完整经验，
+内含一份**可直接复制给 AI 的通用提示词模板**，以及本机实测踩过的 7 类坑（代理 TLS、提交乱码、
+Release 字段缺失、资产 422、描述问号、换行符/BOM 保护、PAT 不落盘）。其它项目需要上传 GitHub 时复用即可。
