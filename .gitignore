@@ -1,0 +1,8 @@
+# WorkBuddy 项目内部数据（会话记忆、缓存、日志），不随仓库分发
+.workbuddy/
+
+# 系统与编辑器杂项
+Thumbs.db
+desktop.ini
+*.tmp
+*.log
