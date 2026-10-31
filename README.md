@@ -1,5 +1,7 @@
 # WorkBuddy 搬家器 v1.0.0
 
+[![version](https://img.shields.io/badge/version-v1.0.0-blue.svg)](https://github.com/voipfox2/workbuddy-mover) [![license](https://img.shields.io/github/license/voipfox2/workbuddy-mover.svg)](https://github.com/voipfox2/workbuddy-mover/blob/main/LICENSE) [![platform](https://img.shields.io/badge/platform-Windows-0078D6.svg)](#) [![powershell](https://img.shields.io/badge/PowerShell-5.1%2B-5391FE.svg)](#)
+
 把 WorkBuddy 的数据目录与工作区从 C 盘搬到 D 盘（或其他盘）的脚本工具集。
 
 当前版本：**v1.0.0**（2026-10-31）　·　版本历史见文末「八、版本记录」
@@ -173,7 +175,7 @@ Windows 的用户级环境变量和 `defaultWorkspacePath` 都存放在**账户�
 
 | 版本 | 日期 | 变更内容 |
 |---|---|---|
-| **v1.0.0** | 2026-10-31 | 首个正式版本。包含两个主脚本与三个启动器：<br>· `wb-switch-user`：当前账户的数据目录 + 工作区迁移，支持进度显示、跳过可再生目录、环境变量写入与 `WM_SETTINGCHANGE` 广播；<br>· `wb-apply-users`：以管理员身份批量处理其他账户，通过加载 `NTUSER.DAT` 写入各自配置，含 `-Verify` 只读校验与 `-Rollback` 撤销；<br>· 目录 ACL 授权、`defaultWorkspacePath` 改写、迁移前结束进程等能力。<br>· 文件名引入版本号，脚本内置 `$ScriptVersion` 并在启动时打印；<br>· 项目命名「WorkBuddy 搬家器」，启动横幅统一显示「项目名 + v版本 + 脚本名」。 |
+| **v1.0.0** | 2026-10-31 | 首个正式版本。包含两个主脚本与三个启动器：<br>· `wb-switch-user`：当前账户的数据目录 + 工作区迁移，支持进度显示、跳过可再生目录、环境变量写入与 `WM_SETTINGCHANGE` 广播；<br>· `wb-apply-users`：以管理员身份批量处理其他账户，通过加载 `NTUSER.DAT` 写入各自配置，含 `-Verify` 只读校验与 `-Rollback` 撤销；<br>· 目录 ACL 授权、`defaultWorkspacePath` 改写、迁移前结束进程等能力。<br>· 文件名引入版本号，脚本内置 `$ScriptVersion` 并在启动时打印；<br>· 项目命名「WorkBuddy 搬家器」，启动横幅统一显示「项目名 + v版本 + 脚本名」；<br>· 配套 MIT 许可证、版本徽章与仓库 topics。 |
 
 ### 升级版本的同步清单
 
@@ -187,3 +189,8 @@ Windows 的用户级环境变量和 `defaultWorkspacePath` 都存放在**账户�
 > `.ps1` 含中文，保存时必须是 **UTF-8 带 BOM**（Windows PowerShell 5.1 依赖 BOM 识别编码）；
 > `.bat` 必须**纯 ASCII 且无 BOM**，否则 cmd 按 GBK 解析会出现「不是内部或外部命令」。
 > 因此 `.bat` 的横幅使用英文名 `WorkBuddy Migrator`，中文项目名只出现在 `.ps1` 与本文档中。
+
+## 九、许可证
+
+本项目采用 [MIT 许可证](LICENSE)，版权归 © 2026 voipfox2 所有。
+可自由使用、修改与再分发，仅需保留版权与许可声明。
